@@ -343,8 +343,3 @@ if ( WRAP_GO )
     GO_ARCH
     )
 endif()
-
-
-if( WIN32 )
-  mark_as_advanced( WRAP_R )
-endif()
