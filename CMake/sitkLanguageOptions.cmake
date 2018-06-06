@@ -314,3 +314,37 @@ endif()
 if( WIN32 )
   mark_as_advanced( WRAP_R )
 endif()
+
+
+#-----------------------------------------------------------
+# Go
+
+sitkLanguageShouldDoFindPackage( GO )
+
+if( _do_find_package )
+
+  find_package ( Go ${_find_package_extra_args} )
+
+  if ( GO_FOUND )
+    set ( WRAP_GO_DEFAULT ${WRAP_DEFAULT} )
+  else ( )
+    set ( WRAP_GO_DEFAULT OFF )
+  endif ( )
+endif()
+
+option ( WRAP_GO "Wrap Go" ${WRAP_GO_DEFAULT} )
+
+if ( WRAP_GO )
+  list( APPEND SITK_LANGUAGES_VARS
+    GO_FOUND
+    GO_EXECUTABLE
+    GO_VERSION
+    GO_PLATFORM
+    GO_ARCH
+    )
+endif()
+
+
+if( WIN32 )
+  mark_as_advanced( WRAP_R )
+endif()

@@ -52,3 +52,10 @@ endif()
 if ( WRAP_R )
   add_subdirectory( R )
 endif()
+
+#
+# GO SWIG configuration
+#
+if ( WRAP_GO )
+  add_subdirectory( Go )
+endif()
